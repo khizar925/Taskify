@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskkify - Login</title>
+    <style>
+        /* Centering body content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Button container styling */
+        .btn-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Styles for both buttons */
+        #login-btn,
+        #signup-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect */
+        #login-btn:hover,
+        #signup-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn-bar">
+        <a href="/signin"><button id="login-btn">Log In</button></a>
+        <a href="/signup"><button id="signup-btn">Signup</button></a>
+    </div>
+</body>
+
+</html>
