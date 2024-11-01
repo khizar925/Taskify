@@ -38,6 +38,9 @@ app.get('/dashboard.html', userMiddleware, (req, res) => {
   res.sendFile(path.join(__dirname, 'protected', 'dashboard.html'));
 });
 
+app.get("/logout", function (req, res) {
+  res.sendFile(path.join(__dirname, "public", "index.html"))
+})
 async function main() {
   try {
       await mongoose.connect(process.env.DATABASE_URL);

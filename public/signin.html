@@ -65,7 +65,8 @@
 
             try {
                 // Make the POST request to login
-                const response = await axios.post('http://localhost:3000/api/v1/user/login', { email, password });
+                website_url = "http://localhost:3000";
+                const response = await axios.post(`${website_url}/api/v1/user/login`, { email, password });
                 const token = response.data.token;
                 if (token) {
                     window.location.href = `/dashboard?token=${token}`;
