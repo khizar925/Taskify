@@ -30,11 +30,11 @@ app.get("/signup", (req,res) => {
   res.sendFile(path.join(__dirname, "public", "signup.html"))
 })
 
-app.get("/dashboard", (req,res) => {
+app.get("/dashboard", userMiddleware, (req,res) => {
   res.sendFile(path.join(__dirname, "protected", "dashboard.html"))
 })
 
-app.get('/dashboard.html', (req, res) => {
+app.get('/dashboard.html', userMiddleware, (req, res) => {
   res.sendFile(path.join(__dirname, 'protected', 'dashboard.html'));
 });
 

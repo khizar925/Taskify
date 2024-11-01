@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
 
 function userMiddleware(req, res, next) {
-    const token = req.headers.token;
+    const token = req.query.token;
   
     if (!token) {
       return res.status(401).json({
@@ -13,7 +13,6 @@ function userMiddleware(req, res, next) {
     try {
       const response = jwt.verify(token, JWT_SECRET);
       const userId = req.userId ;
-      console.log(userId); 
       req.userId = response.id; // Correctly retrieve userId from the response
 
       next();

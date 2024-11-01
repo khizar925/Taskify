@@ -67,9 +67,8 @@
                 // Make the POST request to login
                 const response = await axios.post('http://localhost:3000/api/v1/user/login', { email, password });
                 const token = response.data.token;
-                if (response.data.token) {
-                    localStorage.setItem("token", response.data.token);
-                    window.location.href = '/dashboard';
+                if (token) {
+                    window.location.href = `/dashboard?token=${token}`;
                 } else {
                     console.error("No token received in response.");
                 }
